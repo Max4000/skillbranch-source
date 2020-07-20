@@ -11,7 +11,7 @@ object UserHolder {
         val usr: User = User.makeUser(fullName = fullName, email = email, password = password)
 
         when {
-            SearchInMapByInfo(usr.userInfo) -> throw IllegalArgumentException("User already exists")
+            SearchInMapByInfo(usr.userInfo) -> throw IllegalArgumentException("A user with this email already exists")
             else -> map[usr.login] = usr
         }
 
@@ -39,7 +39,7 @@ object UserHolder {
         val usr : User = User.makeUser(fullName = fullName,phone = phone)
 
         when {
-            SearchInMapByInfo(usr.userInfo) -> throw IllegalArgumentException("User already exists")
+            SearchInMapByInfo(usr.userInfo) -> throw IllegalArgumentException("A user with this phone already exists")
             else -> map[usr.login] = usr
         }
 
