@@ -151,7 +151,7 @@ class User private constructor(
                 !phone.isNullOrBlank() -> {
                     usr = User(firstName,lastName,phone)
                     if (usr.phone?.length != 12)
-                        throw IllegalArgumentException("Phone has incorrect simbols")
+                        throw IllegalArgumentException("Enter a valid phone number starting with a + and containing 11 digits")
                     return usr
                 }
                 !email.isNullOrBlank()&&!password.isNullOrBlank() -> {
