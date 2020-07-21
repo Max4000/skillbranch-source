@@ -40,8 +40,8 @@ class User private constructor(
         }
         get() =_login!!
 
-     private  var salt: String? = null
-     private lateinit var passwordHash: String
+    var salt: String? = null
+    lateinit var passwordHash: String
 
     @VisibleForTesting(otherwise = VisibleForTesting.NONE)
      var accessCode: String? = null
