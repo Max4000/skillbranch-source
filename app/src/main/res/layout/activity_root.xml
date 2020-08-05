@@ -36,6 +36,26 @@
             android:text="Loading..." />
     </androidx.core.widget.NestedScrollView>
 
+    <ru.skillbranch.skillarticles.ui.custom.ArticleSubmenu
+        android:id="@+id/submenu"
+        android:theme="@style/ArticleBarsTheme"
+        android:layout_width="200dp"
+        android:layout_height="96dp"
+        android:layout_gravity="bottom|right"
+        android:elevation="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_dodgeInsetEdges="bottom" />
+
+    <ru.skillbranch.skillarticles.ui.custom.Bottombar
+        android:id="@+id/bottombar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_gravity="bottom"
+        android:theme="@style/ArticleBarsTheme"
+        android:elevation="4dp"
+        />
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 
