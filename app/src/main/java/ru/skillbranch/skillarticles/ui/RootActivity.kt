@@ -6,19 +6,26 @@ import android.widget.ImageView
 import android.widget.Toolbar
 import kotlinx.android.synthetic.main.activity_root.*
 import ru.skillbranch.skillarticles.R
+import ru.skillbranch.skillarticles.extensions.dpToIntPx
 
 class RootActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_root)
-        //setupToolBar()
+        setupToolBar()
     }
-//    private fun setupToolBar(){
-//        setSupportActionBar(toolbar)
-//        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-//        val logo : ImageView? = if(toolbar.childCount > 2) toolbar.getChildAt(2) as ImageView else null
-//        logo?.scaleType = ImageView.ScaleType.CENTER_CROP
-//        val lp : Toolbar.LayoutParams = logo?.layoutParams as Toolbar.LayoutParams
-//
-//    }
+    private fun setupToolBar(){
+        setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        val logo : ImageView? = if(toolbar.childCount > 2) toolbar.getChildAt(2) as ImageView else null
+        logo?.scaleType = ImageView.ScaleType.CENTER_CROP
+        val lp : Toolbar.LayoutParams? = logo?.layoutParams as? Toolbar.LayoutParams
+        lp?.let {
+            it.width = this.dpToIntPx(40)
+            it.height = this.dpToIntPx(40)
+            it.marginEnd = this.dpToIntPx(16)
+            logo.layoutParams = it
+        }
+
+    }
 }
