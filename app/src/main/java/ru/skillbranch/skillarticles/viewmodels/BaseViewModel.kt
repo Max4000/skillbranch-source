@@ -8,8 +8,7 @@ abstract class BaseViewModel<T>(initState: T) : ViewModel() {
     @VisibleForTesting(otherwise = VisibleForTesting.PROTECTED)
     val notifications = MutableLiveData<Event<Notify>>()
 
-    /***
-     * Инициализация начального состояния аргументом конструктоа, и объявления состояния как
+    /***     * Инициализация начального состояния аргументом конструктоа, и объявления состояния как
      * MediatorLiveData - медиатор исспользуется для того чтобы учитывать изменяемые данные модели
      * и обновлять состояние ViewModel исходя из полученных данных
      */
@@ -18,16 +17,14 @@ abstract class BaseViewModel<T>(initState: T) : ViewModel() {
         value = initState
     }
 
-    /***
-     * getter для получения not null значения текущего состояния ViewModel
+    /***     * getter для получения not null значения текущего состояния ViewModel
      */
     @VisibleForTesting(otherwise = VisibleForTesting.PROTECTED)
     val currentState
         get() = state.value!!
 
 
-    /***
-     * лямбда выражение принимает в качестве аргумента текущее состояние и возвращает
+    /***     * лямбда выражение принимает в качестве аргумента текущее состояние и возвращает
      * модифицированное состояние, которое присваивается текущему состоянию
      */
     @UiThread
@@ -36,8 +33,7 @@ abstract class BaseViewModel<T>(initState: T) : ViewModel() {
         state.value = updatedState
     }
 
-    /***
-     * функция для создания уведомления пользователя о событии (событие обрабатывается только один раз)
+    /***     * функция для создания уведомления пользователя о событии (событие обрабатывается только один раз)
      * соответсвенно при изменении конфигурации и пересоздании Activity уведомление не будет вызвано
      * повторно
      */

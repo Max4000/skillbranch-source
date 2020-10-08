@@ -17,6 +17,7 @@ import ru.skillbranch.skillarticles.viewmodels.base.Notify
 class ArticleViewModel(private val articleID: String) :
     BaseViewModel<ArticleState>(ArticleState()), IArticleViewModel {
     private val repository = ArticleRepository
+
     // private var menuIsShown: Boolean = false
 
     init {

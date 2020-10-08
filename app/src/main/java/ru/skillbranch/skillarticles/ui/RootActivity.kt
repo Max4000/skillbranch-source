@@ -122,6 +122,7 @@ class RootActivity : BaseActivity<ArticleViewModel>(), IArticleView {
         //restore SearchView
         if (binding.isSearch){
             menuItem?.expandActionView()
+
             searchView?.setQuery(binding.searchQuery, false)
 
             if (binding.isFocusedSearch) searchView?.requestFocus()

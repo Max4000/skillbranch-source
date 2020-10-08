@@ -7,6 +7,7 @@ import androidx.lifecycle.*
 
 abstract class BaseViewModel<T : IViewModelState>(initState: T) : ViewModel() {
     @VisibleForTesting(otherwise = VisibleForTesting.PROTECTED)
+
     val notifications = MutableLiveData<Event<Notify>>()
 
     /***

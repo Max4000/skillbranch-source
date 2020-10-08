@@ -27,6 +27,7 @@ class ArticleSubmenu @JvmOverloads constructor(
 
     var isOpen = false
     private var centerX: Float = context.dpToPx(200)
+
     private var centerY: Float = context.dpToPx(96)
 
     init {
