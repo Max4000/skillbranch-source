@@ -47,11 +47,11 @@ val Context.isNetworkAvailable: Boolean
         }
     }
 
-
-fun Context.attrValue(res: Int): Int {
-    val value: Int
-    val tv = TypedValue()
-    if (this.theme.resolveAttribute(res, tv, true)) value = tv.data
-    else throw Resources.NotFoundException("Resource with id $res not found")
-    return value
+fun Context.attrValue(resId: Int): Int {
+    val typedValue = TypedValue()
+    if (theme.resolveAttribute(resId, typedValue, true)) {
+        return typedValue.data
+    } else {
+        throw Resources.NotFoundException("Resource with id $resId not found")
+    }
 }

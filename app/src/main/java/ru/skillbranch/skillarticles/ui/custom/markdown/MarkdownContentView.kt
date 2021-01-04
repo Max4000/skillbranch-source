@@ -22,10 +22,8 @@ class MarkdownContentView @JvmOverloads constructor(
     attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : ViewGroup(context, attrs, defStyleAttr) {
     private lateinit var elements: List<MarkdownElement>
-
     private var layoutManager: LayoutManager = LayoutManager()
 
-    private var ids = arrayListOf<Int>()
     var textSize by Delegates.observable(14f) { _, old, value ->
         if (value == old) return@observable
         this.children.forEach {

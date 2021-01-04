@@ -87,10 +87,7 @@ class MarkdownImageView private constructor(
     private var aspectRatio = 0f
 
     init {
-        layoutParams = LayoutParams(
-            LayoutParams.WRAP_CONTENT,
-            LayoutParams.WRAP_CONTENT
-        )
+        layoutParams = LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT)
 
         iv_image = ImageView(context).apply {
             outlineProvider = object : ViewOutlineProvider() {
@@ -113,17 +110,15 @@ class MarkdownImageView private constructor(
         addView(tv_title)
     }
 
-    constructor(context: Context, fontSize: Float, url: String, title: CharSequence, alt: String?) :
+    constructor(context: Context,
+                fontSize: Float,
+                url: String,
+                title: CharSequence,
+                alt: String?) :
             this(context, fontSize) {
         imageUrl = url
         imageTitle = title
         tv_title.setText(title, TextView.BufferType.SPANNABLE)
-
-        Glide
-            .with(context)
-            .load(url)
-            .transform(AspectRatioResizeTransform())
-            .into(iv_image)
 
         if (alt != null) {
             tv_alt = TextView(context).apply {
@@ -151,7 +146,7 @@ class MarkdownImageView private constructor(
     }
 
     @VisibleForTesting(otherwise = VisibleForTesting.PROTECTED)
-    public override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) { // 1:10
+    public override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         var usedHeight = 0
         val width = View.getDefaultSize(suggestedMinimumWidth, widthMeasureSpec)
 
